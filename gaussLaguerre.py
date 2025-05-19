@@ -69,6 +69,6 @@ def obliczBlad(funkcja, wspolczynniki, a, b, iloscPunktow=1000):
     for punkt in x:
         wartoscFunkcji = funkcja(punkt)
         wartoscAproksymacji = wielomianAproksymujacy(punkt, wspolczynniki)
-        blad += (wartoscFunkcji - wartoscAproksymacji) ** 2
+        blad += abs(wartoscFunkcji - wartoscAproksymacji)
 
     return math.sqrt(blad / iloscPunktow)
