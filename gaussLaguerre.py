@@ -59,9 +59,9 @@ def obliczWspolczynniki(funkcja, stopien, iloscWezlow):
 
     return wspolczynniki
 
-def obliczBlad(funkcja, wspolczynniki, a, b, iloscPunktow=1000):
+def obliczBlad(funkcja, wspolczynniki, a, b, iloscPunktow=100):
     # blad liczymy na podstawie punktow
-    # zapisz "sciezke" 1000 punktow na x
+    # zapisz "sciezke" 100 punktow na x
     x = np.linspace(a, b, iloscPunktow)
     blad = 0
 
