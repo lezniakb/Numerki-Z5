@@ -49,7 +49,6 @@ def obliczWspolczynniki(funkcja, stopien, iloscWezlow):
 
     for n in range(stopien + 1):
         # definiujemy funkcje do scalkowania
-        # dla metody gaussa-laguerre'a funkcja zawiera juz wage exp(-x)
         def funkcjaDoScalkowania(x):
             return funkcja(x) * wielomianLaguerra(n, x)
 
@@ -60,16 +59,14 @@ def obliczWspolczynniki(funkcja, stopien, iloscWezlow):
     return wspolczynniki
 
 def obliczBlad(funkcja, wspolczynniki, a, b, iloscPunktow=100):
-     # blad liczymy na podstawie punktow
+    # blad liczymy na podstawie punktow
     # zapisz "sciezke" 100 punktow na x
     x = np.linspace(a, b, iloscPunktow)
-    max_blad = 0
+    sumaRoznic = 0.0
 
     for punkt in x:
         wartoscFunkcji = funkcja(punkt)
         wartoscAproksymacji = wielomianAproksymujacy(punkt, wspolczynniki)
-        blad = abs(wartoscFunkcji - wartoscAproksymacji)
-        if blad > max_blad:
-            max_blad = blad
+        sumaRoznic += abs(wartoscFunkcji - wartoscAproksymacji)
 
-    return max_blad
+    return sumaRoznic / iloscPunktow
