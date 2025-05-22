@@ -60,15 +60,16 @@ def obliczWspolczynniki(funkcja, stopien, iloscWezlow):
     return wspolczynniki
 
 def obliczBlad(funkcja, wspolczynniki, a, b, iloscPunktow=100):
-    # blad liczymy na podstawie punktow
+     # blad liczymy na podstawie punktow
     # zapisz "sciezke" 100 punktow na x
     x = np.linspace(a, b, iloscPunktow)
-    blad = 0
+    max_blad = 0
 
-    # blad jest slabo liczony i zle wypada w funkcjach wielomian/zlozona
     for punkt in x:
         wartoscFunkcji = funkcja(punkt)
         wartoscAproksymacji = wielomianAproksymujacy(punkt, wspolczynniki)
-        blad += abs(wartoscFunkcji - wartoscAproksymacji)
+        blad = abs(wartoscFunkcji - wartoscAproksymacji)
+        if blad > max_blad:
+            max_blad = blad
 
-    return math.sqrt(blad / iloscPunktow)
+    return max_blad
