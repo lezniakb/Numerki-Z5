@@ -4,7 +4,7 @@ import aproksymacja
 while True:
     print("Wybierz funkcję do aproksymacji:\n"
         "1. Liniowa: 2x - 3\n"
-        "2. Moduł: |x|\n"
+        "2. Moduł: |x - 5|\n"
         "3. Wielomian: -2x^3 + 4x^2 + 5\n"
         "4. Trygonometryczna: sin(x) - 0.5\n"
         "5. Złożona: e^(sin(x)) - 2\n"
@@ -23,7 +23,7 @@ while True:
             czyFunkcjaWybrana = True
         elif wybor == 2:
             funkcja = funkcjaModul
-            nazwaFunkcji = "|x|"
+            nazwaFunkcji = "|x - 5|"
             czyFunkcjaWybrana = True
         elif wybor == 3:
             funkcja = funkcjaWielomianowa

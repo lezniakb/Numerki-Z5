@@ -11,8 +11,8 @@ def funkcjaLiniowa(x):
     return 2 * x - 3
 
 def funkcjaModul(x):
-    # |x|
-    return abs(x)
+    # |x - 5|
+    return abs(x - 5)
 
 def funkcjaWielomianowa(x):
     # -2x^3 + 4x^2 + 5
